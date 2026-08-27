@@ -7,7 +7,7 @@ interface WishItem {
   id: string
   title: string
   category: 'gift' | 'activity' | 'place' | 'food' | 'other'
-  addedBy: 'Ana' | 'Ali'
+  addedBy: 'Kaustu' | 'Riji'
   done: boolean
   createdAt: string
   notes?: string

@@ -49,7 +49,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
               phase >= 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            connecting Ana to Ali...
+            connecting Kaustu to Riji...
           </h1>
           <p
             className={`text-muted-foreground text-sm tracking-widest uppercase transition-opacity duration-500 ${

@@ -8,8 +8,8 @@ import { cn } from '@/lib/utils'
 
 interface Letter {
   id: string
-  from: 'Ana' | 'Ali'
-  to: 'Ana' | 'Ali'
+  from: 'Kaustu' | 'Riji'
+  to: 'Kaustu' | 'Riji'
   content: string
   created_at: string
 }
@@ -185,7 +185,7 @@ export function LoveVault() {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-lg">{letter.from === 'Ana' ? '💜' : '💗'}</span>
+                    <span className="text-lg">{letter.from === 'Kaustu' ? '💜' : '💗'}</span>
                     <span className="text-sm text-foreground">{letter.from}</span>
                     <span className="text-muted-foreground">→</span>
                     <span className="text-sm text-foreground">{letter.to}</span>
@@ -214,7 +214,7 @@ export function LoveVault() {
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <span className="text-2xl">{selectedLetter.from === 'Ana' ? '💜' : '💗'}</span>
+                <span className="text-2xl">{selectedLetter.from === 'Kaustu' ? '💜' : '💗'}</span>
                 <div>
                   <p className="text-foreground font-medium">From {selectedLetter.from}</p>
                   <p className="text-xs text-muted-foreground">

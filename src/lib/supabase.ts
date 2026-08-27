@@ -11,7 +11,7 @@ const LOCAL_KEY = 'kaustuandriji_memories'
 export interface Memory {
   id: string
   image_url: string
-  uploader: 'Ana' | 'Ali'
+  uploader: 'Kaustu' | 'Riji'
   caption?: string
   created_at: string
 }
@@ -38,7 +38,7 @@ function removeLocalMemory(id: string) {
 
 export async function uploadMemory(
   file: File,
-  uploader: 'Ana' | 'Ali',
+  uploader: 'Kaustu' | 'Riji',
   caption?: string
 ): Promise<{ success: boolean; error?: string; memory?: Memory }> {
   try {

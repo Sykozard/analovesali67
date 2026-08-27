@@ -1,11 +1,11 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 
-type User = 'Ana' | 'Ali' | null
+type User = 'Kaustu' | 'Riji' | null
 
 interface IdentityContextType {
   currentUser: User
   setCurrentUser: (user: User) => void
-  partner: 'Ana' | 'Ali'
+  partner: 'Kaustu' | 'Riji'
   isIdentitySet: boolean
   switchUser: () => void
 }
@@ -18,7 +18,7 @@ export function IdentityProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem('kaustuandriji_identity')
-    if (stored === 'Ana' || stored === 'Ali') {
+    if (stored === 'Kaustu' || stored === 'Riji') {
       setCurrentUserState(stored)
     }
     setIsLoaded(true)
@@ -34,11 +34,11 @@ export function IdentityProvider({ children }: { children: ReactNode }) {
   }
 
   const switchUser = () => {
-    const newUser = currentUser === 'Ana' ? 'Ali' : 'Ana'
+    const newUser = currentUser === 'Kaustu' ? 'Riji' : 'Kaustu'
     setCurrentUser(newUser)
   }
 
-  const partner = currentUser === 'Ana' ? 'Ali' : 'Ana'
+  const partner = currentUser === 'Kaustu' ? 'Riji' : 'Kaustu'
   const isIdentitySet = currentUser !== null
 
   if (!isLoaded) {

@@ -9,7 +9,7 @@ interface CalEvent {
   title: string
   date: string
   category: 'anniversary' | 'visit' | 'milestone' | 'birthday' | 'special'
-  addedBy: 'Ana' | 'Ali'
+  addedBy: 'Kaustu' | 'Riji'
   repeatsYearly: boolean
   notes?: string
 }
@@ -25,7 +25,7 @@ const CATS = [
 ] as const
 
 const DEFAULT_EVENTS: CalEvent[] = [
-  { id: 'anniversary', title: 'Our Anniversary 💗', date: '2025-04-13', category: 'anniversary', addedBy: 'Ana', repeatsYearly: true },
+  { id: 'anniversary', title: 'Our Anniversary 💗', date: '2026-05-10', category: 'anniversary', addedBy: 'Kaustu', repeatsYearly: true },
 ]
 
 function getEvents(): CalEvent[] {

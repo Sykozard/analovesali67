@@ -244,15 +244,14 @@ export function Dashboard() {
   return (
     <div className="p-4 md:p-8 max-w-4xl mx-auto">
       <div
-        className={`text-center mb-10 md:mb-12 pt-4 md:pt-8 transition-all duration-500 ${
+        className={`text-center mb-8 transition-all duration-500 ${
           mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
         }`}
       >
-        <p className="text-xs uppercase tracking-[0.28em] text-primary/70 mb-3">our little love story</p>
-        <h1 className="text-5xl md:text-6xl font-serif text-foreground text-glow mb-3">
-          Ana <span className="text-primary">♥</span> Ali
+        <h1 className="text-3xl md:text-4xl font-serif text-foreground text-glow mb-1">
+          ana & ali
         </h1>
-        <p className="text-muted-foreground text-sm">dating since <span className="font-medium text-foreground">13 April 2025</span></p>
+        <p className="text-muted-foreground text-sm">our love, our story, our forever 💗</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

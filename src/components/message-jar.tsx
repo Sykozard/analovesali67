@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 
 interface JarMessage {
   id: string
-  from: 'Ana' | 'Ali'
+  from: 'Kaustu' | 'Riji'
   content: string
   createdAt: string
   revealed: boolean

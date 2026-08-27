@@ -16,7 +16,7 @@ script.defer = true
 document.head.appendChild(script)
 
 const savedIdentity = localStorage.getItem('kaustuandriji_identity')
-const user = savedIdentity === 'Ana' || savedIdentity === 'Ali' ? savedIdentity : null
+const user = savedIdentity === 'Kaustu' || savedIdentity === 'Riji' ? savedIdentity : null
 
 window.OneSignalDeferred.push(async function (OneSignal: {
   init: (options: { appId: string; notifyButton: { enable: boolean } }) => Promise<void>

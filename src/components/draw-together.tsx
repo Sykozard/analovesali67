@@ -8,8 +8,8 @@ const CANVAS_KEY = 'kaustuandriji_canvas'
 const CHANNEL = 'drawing-room-v1'
 
 const COLORS = {
-  Ana: ['#8f1d3a', '#b85c72', '#d88b9b', '#e7c1ba', '#fffaf1', '#3a2022'],
-  Ali: ['#b85c72', '#8f1d3a', '#c97583', '#d88b9b', '#fffaf1', '#3a2022'],
+  Kaustu: ['#e11d74', '#a855f7', '#ec4899', '#f472b6', '#ffffff', '#1a1015'],
+  Riji: ['#f472b6', '#e11d74', '#fb7185', '#a855f7', '#ffffff', '#1a1015'],
 }
 const SIZES = [2, 4, 8, 14]
 
@@ -26,7 +26,7 @@ export function DrawTogether() {
   const lastPos = useRef<{ x: number; y: number } | null>(null)
   const channelRef = useRef<ReturnType<typeof supabase.channel> | null>(null)
 
-  const [color, setColor] = useState(currentUser === 'Ana' ? '#8f1d3a' : '#b85c72')
+  const [color, setColor] = useState(currentUser === 'Kaustu' ? '#e11d74' : '#f472b6')
   const [size, setSize] = useState(4)
   const [isEraser, setIsEraser] = useState(false)
   const [online, setOnline] = useState(false)
@@ -43,7 +43,7 @@ export function DrawTogether() {
       const saved = canvas.toDataURL()
       canvas.width = canvas.offsetWidth
       canvas.height = canvas.offsetHeight
-      ctx.fillStyle = '#fff7ec'
+      ctx.fillStyle = '#0a0608'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
       // Restore saved drawing
       const img = new Image()
@@ -60,7 +60,7 @@ export function DrawTogether() {
       img.onload = () => ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
       img.src = saved
     } else {
-      ctx.fillStyle = '#fff7ec'
+      ctx.fillStyle = '#0a0608'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
     }
 
@@ -125,7 +125,7 @@ export function DrawTogether() {
     const canvas = canvasRef.current
     const ctx = ctxRef.current
     if (!canvas || !ctx) return
-    ctx.fillStyle = '#fff7ec'
+    ctx.fillStyle = '#0a0608'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     localStorage.removeItem(CANVAS_KEY)
     if (broadcast && channelRef.current) {
@@ -158,7 +158,7 @@ export function DrawTogether() {
     const canvas = canvasRef.current
     if (!canvas) return
     const pos = getPos(e, canvas)
-    const activeColor = isEraser ? '#fff7ec' : color
+    const activeColor = isEraser ? '#0a0608' : color
     const activeSize = isEraser ? size * 3 : size
     drawStroke({ x: pos.x, y: pos.y, prevX: lastPos.current.x, prevY: lastPos.current.y, color: activeColor, size: activeSize, user: currentUser || '' })
     lastPos.current = pos
@@ -180,7 +180,7 @@ export function DrawTogether() {
     link.click()
   }
 
-  const myColors = COLORS[currentUser as keyof typeof COLORS] || COLORS.Ana
+  const myColors = COLORS[currentUser as keyof typeof COLORS] || COLORS.Kaustu
 
   return (
     <div className="flex flex-col h-[calc(100vh-7rem)] md:h-screen p-3 md:p-6 max-w-5xl mx-auto">
@@ -202,7 +202,7 @@ export function DrawTogether() {
               onClick={() => { setColor(c); setIsEraser(false) }}
               className={cn("w-7 h-7 rounded-full transition-all duration-150 hover:scale-110",
                 color === c && !isEraser ? "ring-2 ring-white/60 scale-110" : "")}
-              style={{ background: c, border: c === '#3a2022' ? '1px solid rgba(58,32,34,0.2)' : 'none' }}
+              style={{ background: c, border: c === '#1a1015' ? '1px solid rgba(255,255,255,0.2)' : 'none' }}
             />
           ))}
         </div>
